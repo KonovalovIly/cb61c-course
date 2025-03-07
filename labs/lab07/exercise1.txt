@@ -1,0 +1,18 @@
+Scenario 1
+	1. Step size was equal to the number of steps
+	2. No
+	3. Change step size to 1 will increase hit rate to 50%
+
+Scenario 2
+	1. There are 2 memory access per iteration of the inner loop
+	2. The pattern is Miss, Hit, Hit, Hit
+	3. The hit rate is 75%, which is obvious due to the pattern described in 2
+	4. The hit rate keeps going up until nearly 100%, because all the data which will be accessed have been cached, so after the first iteration, all the access will hit.
+	5. we should split the array in equal part whose size is just equal to our  cache size, and then try to access each part of the array at a time and apply all of the function to that part so we can be completely done with it before moving on, thereby keeping that part hot in the cache and not having to circle back to it later on!
+
+Scenario 3
+	1. L1_HR = 50%, L2_HR = 0%, Overall_HR = 50%
+	2. We have 32 accesses to L1 cache in total. 16 of them are missed.
+	3. We have 16 accesses to L2 cache in total. They are the missed accesses to L1 cache.
+	4. The block size of L2 cache. Increasing the block size of L2 will increase L2_HR.
+	5. (1) it has no effect on the L1_HR and L2_HR when we increase the number of blocks in L1. (2) the L1_HR will increase when we increase the block size of L1 cache, but the L2_HR will not be affected.

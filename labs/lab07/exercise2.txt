@@ -1,0 +1,10 @@
+ijk:    n = 1000, 3.457 Gflop/s
+ikj:    n = 1000, 1.099 Gflop/s
+jik:    n = 1000, 3.212 Gflop/s
+jki:    n = 1000, 18.265 Gflop/s
+kij:    n = 1000, 0.920 Gflop/s
+kji:    n = 1000, 12.933 Gflop/s
+
+1. jki -> kji.
+2. kij.
+More stride in the innermost loop, the worse it is.
